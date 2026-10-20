@@ -2,7 +2,7 @@
 
 Запуск:  python plot.py      (нужен matplotlib: pip install matplotlib)
 В Google Colab: загрузите results.csv в файлы слева и запустите ячейку —
-графики появятся прямо под ней и сохранятся в .png.
+графики появятся прямо под ней.
 """
 import csv
 
@@ -42,8 +42,6 @@ for data, algs in table.items():
     right.set_title("O(n log n) на больших n")
     fig.suptitle(TITLES.get(data, data))
     fig.tight_layout()
-    fig.savefig(f"T_n_{data}.png", dpi=120)
-    print("saved", f"T_n_{data}.png")
     plt.show()
 
 # Каждый алгоритм: случайные данные против фрагментов
@@ -59,6 +57,4 @@ for ax, alg in zip(axes, ALGS):
     ax.grid(alpha=0.3)
     ax.legend(fontsize=8)
 fig.tight_layout()
-fig.savefig("T_n_compare.png", dpi=120)
-print("saved", "T_n_compare.png")
 plt.show()
