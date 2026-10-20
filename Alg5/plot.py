@@ -1,11 +1,11 @@
 """Графики T(n) по results.csv, который записывает Alg5.exe.
 
 Запуск:  python plot.py      (нужен matplotlib: pip install matplotlib)
+В Google Colab: загрузите results.csv в файлы слева и запустите ячейку —
+графики появятся прямо под ней и сохранятся в .png.
 """
 import csv
 
-import matplotlib
-matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 ALGS = ["insertionSort", "mergeSort", "std::sort"]
@@ -44,6 +44,7 @@ for data, algs in table.items():
     fig.tight_layout()
     fig.savefig(f"T_n_{data}.png", dpi=120)
     print("saved", f"T_n_{data}.png")
+    plt.show()
 
 # Каждый алгоритм: случайные данные против фрагментов
 fig, axes = plt.subplots(1, 3, figsize=(16, 4.5))
@@ -60,3 +61,4 @@ for ax, alg in zip(axes, ALGS):
 fig.tight_layout()
 fig.savefig("T_n_compare.png", dpi=120)
 print("saved", "T_n_compare.png")
+plt.show()
