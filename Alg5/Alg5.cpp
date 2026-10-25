@@ -69,19 +69,23 @@ void stdSort(T arr[], int size) {
 }
 
 // ---------------------------------------------------------------------------
-// Заполнение массивов
+// Заполнение массивов (тоже шаблоны: работают и с int, и с double)
 // ---------------------------------------------------------------------------
 
-// п. 4: случайные числа
-void fillRandom(int arr[], int size) {
+// п. 4: случайные числа.
+// Для double получается дробное число, например 12345.678.
+// Для int дробная часть (T)rand() / RAND_MAX отбрасывается и почти всегда равна 0.
+template <typename T>
+void fillRandom(T arr[], int size) {
     for (int i = 0; i < size; i++) {
-        arr[i] = rand();
+        arr[i] = (T)rand() + (T)rand() / RAND_MAX;
     }
 }
 
 // п. 5: массив из PARTS упорядоченных фрагментов.
 // Сначала заполняем случайно, потом сортируем каждый кусок отдельно.
-void fillFragments(int arr[], int size) {
+template <typename T>
+void fillFragments(T arr[], int size) {
     fillRandom(arr, size);
     int len = size / PARTS;
     for (int p = 0; p < PARTS; p++) {
@@ -115,7 +119,8 @@ void printArray(T arr[], int size) {
 // Время одной сортировки в миллисекундах.
 // src не портится: сортируем его копию arr, поэтому все алгоритмы
 // получают одинаковые данные. Копирование в замер не входит.
-double measure(void (*sortFunc)(int[], int), int src[], int arr[], int size) {
+template <typename T>
+double measure(void (*sortFunc)(T[], int), T src[], T arr[], int size) {
     for (int i = 0; i < size; i++) arr[i] = src[i];
 
     auto start = chrono::steady_clock::now();
@@ -131,16 +136,17 @@ double measure(void (*sortFunc)(int[], int), int src[], int arr[], int size) {
 
 // Среднее время трёх алгоритмов на TESTS массивах размера size.
 // Результат: печать строки таблицы и запись строки в CSV.
-void runTests(const char* name, void (*fill)(int[], int), int size,
-              int src[], int arr[], ofstream& csv) {
+template <typename T>
+void runTests(const char* type, const char* name, void (*fill)(T[], int), int size,
+              T src[], T arr[], ofstream& csv) {
     double tIns = 0, tMerge = 0, tStd = 0;
     bool doIns = size <= MAX_N2;
 
     for (int t = 0; t < TESTS; t++) {
         fill(src, size);
-        if (doIns) tIns += measure(insertionSort<int>, src, arr, size);
-        tMerge += measure(mergeSort<int>, src, arr, size);
-        tStd += measure(stdSort<int>, src, arr, size);
+        if (doIns) tIns += measure(insertionSort<T>, src, arr, size);
+        tMerge += measure(mergeSort<T>, src, arr, size);
+        tStd += measure(stdSort<T>, src, arr, size);
     }
     tIns /= TESTS;
     tMerge /= TESTS;
@@ -151,9 +157,42 @@ void runTests(const char* name, void (*fill)(int[], int), int size,
     else cout << setw(16) << "-";
     cout << setw(16) << tMerge << setw(16) << tStd << endl;
 
-    csv << name << ";" << size << ";";
+    csv << type << ";" << name << ";" << size << ";";
     if (doIns) csv << tIns;
     csv << ";" << tMerge << ";" << tStd << endl;
+}
+
+void printHeader() {
+    cout << setw(10) << "n" << setw(16) << "insertionSort"
+         << setw(16) << "mergeSort" << setw(16) << "std::sort" << endl;
+}
+
+// Все замеры для одного типа элементов T (int или double):
+// сначала случайные массивы, потом массивы из упорядоченных фрагментов.
+template <typename T>
+void runAll(const char* type, ofstream& csv) {
+    int sizes[] = { 1000, 2000, 5000, 10000, 20000, 30000, 40000, 50000,
+                    100000, 200000, 500000, 1000000 };
+    const int sizeCount = sizeof(sizes) / sizeof(sizes[0]);
+    const int maxSize = 1000000;
+
+    T* src = new T[maxSize];
+    T* arr = new T[maxSize];
+
+    cout << endl << "Random arrays, " << type << ":" << endl;
+    printHeader();
+    for (int i = 0; i < sizeCount; i++) {
+        runTests(type, "random", fillRandom<T>, sizes[i], src, arr, csv);
+    }
+
+    cout << endl << "Arrays with " << PARTS << " sorted fragments, " << type << ":" << endl;
+    printHeader();
+    for (int i = 0; i < sizeCount; i++) {
+        runTests(type, "fragments", fillFragments<T>, sizes[i], src, arr, csv);
+    }
+
+    delete[] src;
+    delete[] arr;
 }
 
 int main() {
@@ -170,36 +209,16 @@ int main() {
     printArray(b, 5);
     cout << endl;
 
-    int sizes[] = { 1000, 2000, 5000, 10000, 20000, 30000, 40000, 50000,
-                    100000, 200000, 500000, 1000000 };
-    const int sizeCount = sizeof(sizes) / sizeof(sizes[0]);
-    const int maxSize = 1000000;
-
-    int* src = new int[maxSize];
-    int* arr = new int[maxSize];
-
     ofstream csv("results.csv");
-    csv << "data;n;insertionSort;mergeSort;std::sort" << endl;
+    csv << "type;data;n;insertionSort;mergeSort;std::sort" << endl;
     cout << fixed << setprecision(3);
     csv << fixed << setprecision(3);
 
     cout << "Average time, ms (" << TESTS << " arrays for each n)" << endl;
 
-    cout << endl << "Random arrays:" << endl;
-    cout << setw(10) << "n" << setw(16) << "insertionSort" << setw(16) << "mergeSort" << setw(16) << "std::sort" << endl;
-    for (int i = 0; i < sizeCount; i++) {
-        runTests("random", fillRandom, sizes[i], src, arr, csv);
-    }
-
-    cout << endl << "Arrays with " << PARTS << " sorted fragments:" << endl;
-    cout << setw(10) << "n" << setw(16) << "insertionSort" << setw(16) << "mergeSort" << setw(16) << "std::sort" << endl;
-    for (int i = 0; i < sizeCount; i++) {
-        runTests("fragments", fillFragments, sizes[i], src, arr, csv);
-    }
+    runAll<int>("int", csv);
+    runAll<double>("double", csv);
 
     cout << endl << "Saved to results.csv" << endl;
-
-    delete[] src;
-    delete[] arr;
     return 0;
 }
