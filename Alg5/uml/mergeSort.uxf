@@ -219,23 +219,24 @@ j = center</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>740</x>
+      <x>730</x>
       <y>560</y>
-      <w>320</w>
-      <h>70</h>
+      <w>340</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>30.0;10.0;290.0;10.0;310.0;35.0;290.0;60.0;30.0;60.0;10.0;35.0;30.0;10.0</additional_attributes>
+    <additional_attributes>26.0;10.0;314.0;10.0;330.0;26.0;330.0;70.0;10.0;70.0;10.0;26.0;26.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>750</x>
+      <x>740</x>
       <y>570</y>
-      <w>300</w>
-      <h>50</h>
+      <w>320</w>
+      <h>60</h>
     </coordinates>
-    <panel_attributes>k = left; k &lt; right; k++
+    <panel_attributes>Слияние: цикл по k
+k = left; k &lt; right; k++
 halign=center
 valign=center
 fontsize=12</panel_attributes>
@@ -245,7 +246,7 @@ fontsize=12</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>720</x>
-      <y>650</y>
+      <y>660</y>
       <w>360</w>
       <h>130</h>
     </coordinates>
@@ -256,7 +257,7 @@ fontsize=12</panel_attributes>
     <id>Text</id>
     <coordinates>
       <x>730</x>
-      <y>660</y>
+      <y>670</y>
       <w>340</w>
       <h>110</h>
     </coordinates>
@@ -271,7 +272,7 @@ fontsize=12</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>510</x>
-      <y>800</y>
+      <y>820</y>
       <w>220</w>
       <h>60</h>
     </coordinates>
@@ -283,7 +284,7 @@ i = i + 1</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1070</x>
-      <y>800</y>
+      <y>820</y>
       <w>220</w>
       <h>60</h>
     </coordinates>
@@ -294,23 +295,49 @@ j = j + 1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>740</x>
-      <y>930</y>
-      <w>320</w>
+      <x>730</x>
+      <y>920</y>
+      <w>340</w>
       <h>70</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>30.0;10.0;290.0;10.0;310.0;35.0;290.0;60.0;30.0;60.0;10.0;35.0;30.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;330.0;10.0;330.0;44.0;314.0;60.0;26.0;60.0;10.0;44.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>750</x>
-      <y>940</y>
-      <w>300</w>
+      <x>740</x>
+      <y>930</y>
+      <w>320</w>
       <h>50</h>
     </coordinates>
-    <panel_attributes>k = left; k &lt; right; k++
+    <panel_attributes>Конец цикла слияния
+halign=center
+valign=center
+fontsize=12</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>730</x>
+      <y>1010</y>
+      <w>340</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>26.0;10.0;314.0;10.0;330.0;26.0;330.0;70.0;10.0;70.0;10.0;26.0;26.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>740</x>
+      <y>1020</y>
+      <w>320</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>Копирование: цикл по k
+k = left; k &lt; right; k++
 halign=center
 valign=center
 fontsize=12</panel_attributes>
@@ -320,7 +347,7 @@ fontsize=12</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>790</x>
-      <y>1030</y>
+      <y>1120</y>
       <w>220</w>
       <h>40</h>
     </coordinates>
@@ -328,10 +355,35 @@ fontsize=12</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>730</x>
+      <y>1190</y>
+      <w>340</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;330.0;10.0;330.0;44.0;314.0;60.0;26.0;60.0;10.0;44.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>740</x>
+      <y>1200</y>
+      <w>320</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>Конец цикла копирования
+halign=center
+valign=center
+fontsize=12</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
     <id>UMLState</id>
     <coordinates>
       <x>830</x>
-      <y>1150</y>
+      <y>1290</y>
       <w>140</w>
       <h>40</h>
     </coordinates>
@@ -391,8 +443,8 @@ fontsize=12</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>670</x>
-      <y>692</y>
+      <x>660</x>
+      <y>702</y>
       <w>60</w>
       <h>20</h>
     </coordinates>
@@ -404,7 +456,7 @@ fontsize=12</panel_attributes>
     <id>Text</id>
     <coordinates>
       <x>1085</x>
-      <y>692</y>
+      <y>702</y>
       <w>60</w>
       <h>20</h>
     </coordinates>
@@ -537,7 +589,7 @@ fontsize=12</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>890</x>
-      <y>610</y>
+      <y>620</y>
       <w>20</w>
       <h>60</h>
     </coordinates>
@@ -548,62 +600,51 @@ fontsize=12</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>610</x>
-      <y>705</y>
+      <y>715</y>
       <w>130</w>
-      <h>105</h>
+      <h>115</h>
     </coordinates>
     <panel_attributes>lt=-&gt;</panel_attributes>
-    <additional_attributes>120.0;10.0;10.0;10.0;10.0;95.0</additional_attributes>
+    <additional_attributes>120.0;10.0;10.0;10.0;10.0;105.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>1060</x>
-      <y>705</y>
+      <y>715</y>
       <w>130</w>
-      <h>105</h>
+      <h>115</h>
     </coordinates>
     <panel_attributes>lt=-&gt;</panel_attributes>
-    <additional_attributes>10.0;10.0;120.0;10.0;120.0;95.0</additional_attributes>
+    <additional_attributes>10.0;10.0;120.0;10.0;120.0;105.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>610</x>
-      <y>850</y>
-      <w>580</w>
-      <h>40</h>
+      <y>870</y>
+      <w>300</w>
+      <h>45</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>570.0;10.0;570.0;30.0;10.0;30.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>430</x>
-      <y>585</y>
-      <w>330</w>
-      <h>305</h>
-    </coordinates>
-    <panel_attributes>lt=-&gt;</panel_attributes>
-    <additional_attributes>190.0;275.0;190.0;295.0;10.0;295.0;10.0;10.0;320.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;35.0;290.0;35.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>890</x>
-      <y>585</y>
-      <w>480</w>
-      <h>365</h>
+      <y>870</y>
+      <w>300</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>lt=-&gt;</panel_attributes>
-    <additional_attributes>160.0;10.0;470.0;10.0;470.0;325.0;10.0;325.0;10.0;355.0</additional_attributes>
+    <additional_attributes>290.0;10.0;290.0;35.0;10.0;35.0;10.0;60.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>890</x>
-      <y>980</y>
+      <y>970</y>
       <w>20</w>
       <h>60</h>
     </coordinates>
@@ -613,23 +654,34 @@ fontsize=12</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>590</x>
-      <y>955</y>
-      <w>320</w>
-      <h>155</h>
+      <x>890</x>
+      <y>1070</y>
+      <w>20</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>lt=-&gt;</panel_attributes>
-    <additional_attributes>310.0;115.0;310.0;145.0;10.0;145.0;10.0;10.0;160.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>890</x>
-      <y>955</y>
-      <w>320</w>
-      <h>205</h>
+      <y>1150</y>
+      <w>20</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>lt=-&gt;</panel_attributes>
-    <additional_attributes>160.0;10.0;310.0;10.0;310.0;175.0;10.0;175.0;10.0;195.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>890</x>
+      <y>1240</y>
+      <w>20</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
   </element>
 </diagram>
