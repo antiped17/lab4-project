@@ -43,7 +43,7 @@
       <h>60</h>
     </coordinates>
     <panel_attributes>Цикл по i
-i от 1 до size − 1
+i от 1 до size
 halign=center
 valign=center
 fontsize=12</panel_attributes>

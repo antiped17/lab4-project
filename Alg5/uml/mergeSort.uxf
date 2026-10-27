@@ -258,7 +258,7 @@ j = center</panel_attributes>
       <h>60</h>
     </coordinates>
     <panel_attributes>Цикл по k
-k от left до right − 1
+k от int left до right
 halign=center
 valign=center
 fontsize=12</panel_attributes>
@@ -359,7 +359,7 @@ fontsize=12</panel_attributes>
       <h>60</h>
     </coordinates>
     <panel_attributes>Цикл по k
-k от left до right − 1
+k от int left до right
 halign=center
 valign=center
 fontsize=12</panel_attributes>
