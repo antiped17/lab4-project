@@ -29,44 +29,44 @@
       <x>70</x>
       <y>220</y>
       <w>260</w>
-      <h>60</h>
+      <h>50</h>
     </coordinates>
-    <panel_attributes>создание массива buf
-buf = new T[size]</panel_attributes>
+    <panel_attributes>создание массива buf</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>50</x>
-      <y>310</y>
-      <w>300</w>
-      <h>40</h>
+      <x>30</x>
+      <y>300</y>
+      <w>340</w>
+      <h>50</h>
     </coordinates>
-    <panel_attributes>mergeSortRange(arr, buf, 0, size)</panel_attributes>
+    <panel_attributes>вызов mergeSortRange с аргументами
+arr, buf, 0, size</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>52</x>
-      <y>300</y>
+      <x>32</x>
+      <y>290</y>
       <w>20</w>
-      <h>60</h>
+      <h>70</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>328</x>
-      <y>300</y>
+      <x>348</x>
+      <y>290</y>
       <w>20</w>
-      <h>60</h>
+      <h>70</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -74,10 +74,9 @@ buf = new T[size]</panel_attributes>
       <x>70</x>
       <y>380</y>
       <w>260</w>
-      <h>60</h>
+      <h>50</h>
     </coordinates>
-    <panel_attributes>удаление buf
-delete[] buf</panel_attributes>
+    <panel_attributes>удаление массива buf</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -132,7 +131,7 @@ delete[] buf</panel_attributes>
       <w>220</w>
       <h>70</h>
     </coordinates>
-    <panel_attributes>right − left &lt;= 1
+    <panel_attributes>right - left &lt;= 1
 halign=center
 valign=center
 fontsize=12</panel_attributes>
@@ -157,85 +156,86 @@ fontsize=12</panel_attributes>
       <w>320</w>
       <h>40</h>
     </coordinates>
-    <panel_attributes>center = (right − left) / 2 + left</panel_attributes>
+    <panel_attributes>center = (right - left) / 2 + left</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>730</x>
+      <x>770</x>
       <y>400</y>
-      <w>340</w>
-      <h>40</h>
+      <w>260</w>
+      <h>50</h>
     </coordinates>
-    <panel_attributes>mergeSortRange(arr, buf, left, center)</panel_attributes>
+    <panel_attributes>рекурсивный вызов для
+левой половины</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>732</x>
+      <x>772</x>
       <y>390</y>
       <w>20</w>
-      <h>60</h>
+      <h>70</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1048</x>
+      <x>1008</x>
       <y>390</y>
       <w>20</w>
-      <h>60</h>
+      <h>70</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>730</x>
+      <x>770</x>
+      <y>480</y>
+      <w>260</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>рекурсивный вызов для
+правой половины</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>772</x>
       <y>470</y>
-      <w>340</w>
-      <h>40</h>
+      <w>20</w>
+      <h>70</h>
     </coordinates>
-    <panel_attributes>mergeSortRange(arr, buf, center, right)</panel_attributes>
-    <additional_attributes/>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>732</x>
-      <y>460</y>
+      <x>1008</x>
+      <y>470</y>
       <w>20</w>
-      <h>60</h>
+      <h>70</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1048</x>
-      <y>460</y>
-      <w>20</w>
-      <h>60</h>
-    </coordinates>
-    <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>800</x>
-      <y>540</y>
-      <w>200</w>
-      <h>60</h>
+      <x>770</x>
+      <y>560</y>
+      <w>260</w>
+      <h>40</h>
     </coordinates>
-    <panel_attributes>i = left
-j = center</panel_attributes>
+    <panel_attributes>i = left, j = center</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -283,7 +283,7 @@ fontsize=12</panel_attributes>
       <w>340</w>
       <h>110</h>
     </coordinates>
-    <panel_attributes>j == right или
+    <panel_attributes>j = right или
 (i &lt; center и arr[i] &lt;= arr[j])
 halign=center
 valign=center
@@ -293,25 +293,23 @@ fontsize=12</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>510</x>
+      <x>500</x>
       <y>880</y>
-      <w>220</w>
-      <h>60</h>
+      <w>240</w>
+      <h>40</h>
     </coordinates>
-    <panel_attributes>buf[k] = arr[i]
-i = i + 1</panel_attributes>
+    <panel_attributes>buf[k] = arr[i], i = i + 1</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1070</x>
+      <x>1060</x>
       <y>880</y>
-      <w>220</w>
-      <h>60</h>
+      <w>240</w>
+      <h>40</h>
     </coordinates>
-    <panel_attributes>buf[k] = arr[j]
-j = j + 1</panel_attributes>
+    <panel_attributes>buf[k] = arr[j], j = j + 1</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -512,7 +510,7 @@ fontsize=12</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>190</x>
-      <y>270</y>
+      <y>260</y>
       <w>20</w>
       <h>50</h>
     </coordinates>
@@ -534,12 +532,12 @@ fontsize=12</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>190</x>
-      <y>430</y>
+      <y>420</y>
       <w>20</w>
-      <h>50</h>
+      <h>60</h>
     </coordinates>
     <panel_attributes>lt=-&gt;</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -589,7 +587,7 @@ fontsize=12</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>890</x>
-      <y>430</y>
+      <y>440</y>
       <w>20</w>
       <h>50</h>
     </coordinates>
@@ -600,7 +598,7 @@ fontsize=12</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>890</x>
-      <y>500</y>
+      <y>520</y>
       <w>20</w>
       <h>50</h>
     </coordinates>
@@ -710,22 +708,22 @@ fontsize=12</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>610</x>
-      <y>930</y>
+      <y>910</y>
       <w>300</w>
-      <h>45</h>
+      <h>65</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;35.0;290.0;35.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;55.0;290.0;55.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>890</x>
-      <y>930</y>
+      <y>910</y>
       <w>300</w>
-      <h>70</h>
+      <h>90</h>
     </coordinates>
     <panel_attributes>lt=-&gt;</panel_attributes>
-    <additional_attributes>290.0;10.0;290.0;35.0;10.0;35.0;10.0;60.0</additional_attributes>
+    <additional_attributes>290.0;10.0;290.0;55.0;10.0;55.0;10.0;80.0</additional_attributes>
   </element>
 </diagram>
